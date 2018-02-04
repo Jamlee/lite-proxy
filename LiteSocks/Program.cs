@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net.Sockets;
+using Serilog;
 
 namespace LiteSocks
 {
@@ -6,7 +8,14 @@ namespace LiteSocks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .WriteTo.LiterateConsole()
+                .CreateLogger();
+
+            Log.Logger.Information("Start the Proxy Server");
+            Proxy proxy = new Proxy("0.0.0.0", 8000);
+            proxy.Start();
         }
     }
 }
