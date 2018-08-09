@@ -1,0 +1,30 @@
+﻿@import "variables.less";
+
+// 初始化
+body {
+   margin: 0;
+}
+
+.container {
+    background-color: @bg-color;
+}
+
+// 工具
+@directions: 1, 2, 3, 4, 5;
+each(@directions, {
+
+    @result: @{value};
+    @1: 0.5rem;
+    @2: 1rem;
+    @3: 1.5rem;
+    @4: 2rem;
+    @5: 2.5rem;
+
+    .mt-@{value} {
+        margin-top: @@result;  
+    }
+    
+    .mb-@{value} {
+        margin-bottom: @@result;  
+    }  
+});

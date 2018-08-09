@@ -1,0 +1,39 @@
+﻿@import "../../style/variables.less";
+
+.padding {
+    padding-top: 60px;
+}
+
+.navbar {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    padding: 0;
+    background-color: @navbar-color;
+    color: @white;
+    width: 100%;
+
+    .title {
+        display: inline-block;
+        font-size: 140%;
+        line-height: 2rem;
+    }
+
+    .menu {
+        list-style: none;
+        display: inline-block;
+
+        & > li {
+            font-weight: 200;
+            display: inline-block;
+            line-height: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                color: @neutralLighter;
+            }
+        }
+    }
+}
